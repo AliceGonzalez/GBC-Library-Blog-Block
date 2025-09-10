@@ -1,0 +1,163 @@
+.eb-feature-card {
+  background: #ffffff;
+  border: 2px solid #AFC6EF;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,.12);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.eb-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0,0,0,.18);
+}
+
+/* Featured Star Badge */
+.eb-feature-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #E7A614, #f5c542);
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 6px 8px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,.25);
+  z-index: 5;
+  transition: transform 0.3s ease;
+}
+
+
+
+.eb-feature-card:hover .eb-feature-badge {
+  transform: rotate(10deg) scale(1.1);
+}
+
+
+.eb-feature-card:hover .eb-feature-badge {
+  transform: rotate(10deg) scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.eb-feature-card__media {
+  aspect-ratio: 16 / 7;
+  position: relative;
+  overflow: hidden;
+  background: #f5f5f7;
+}
+
+.eb-feature-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Blue tint overlay */
+.eb-feature-card__media::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 75, 121, 0.5); /* GBC blue tint */
+  z-index: 1;
+}
+
+/* Overlay text */
+.eb-feature-card__media::after {
+  content: "FEATURED BLOG";
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-align: center;
+  z-index: 2;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.eb-feature-card__body {
+  padding: 1rem 1rem 1.25rem;
+  z-index: 3;
+  background: #fff;
+}
+
+.eb-feature-card__title {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  color: #1D3F75;
+}
+
+.eb-feature-card__excerpt {
+  font-size: 1.5rem;
+  color: #3D3F42;
+  margin-bottom: 0.75rem;
+}
+
+.eb-feature-card__cta {
+  font-size: 16px;
+  display: inline-block;
+  font-weight: 600;
+  color: #2D62B7;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.eb-feature-card__cta:hover,
+.eb-feature-card__cta:focus {
+  color: #1D3F75;
+  border-color: #AFC6EF;
+  outline: none;
+}
+
+
+.button-container {
+  padding: 0 1rem 1rem; /* match body spacing */
+  display: flex;
+  justify-content: center;
+}
+
+/* NEW: yellow button styled like the star */
+.eb-feature-card .button-container button {
+  background: #E7A614;                  /* same yellow as star */
+  color: #1D3F75;                        /* accessible contrast on yellow */
+  /* color: #fff; */                     /* <- use this if you prefer white text */
+  border: 2px solid transparent;
+  padding: 0.1rem 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+  transition: background-color .2s ease, transform .12s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.eb-feature-card .button-container button:hover {
+  background: #d99c0f;                  /* slight darken on hover */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0,0,0,.2);
+}
+
+.eb-feature-card .button-container button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+.eb-feature-card .button-container button:focus-visible {
+  outline: none;
+  border-color: #AFC6EF;                /* align with card accent */
+  box-shadow: 0 0 0 3px rgba(175,198,239,.5);
+}
+
+.eb-feature-card__media::after {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  letter-spacing: 1px;
+}
